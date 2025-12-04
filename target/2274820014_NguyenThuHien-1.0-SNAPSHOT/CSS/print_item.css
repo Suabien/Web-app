@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    background: #525659;
+    margin: 0;
+    padding: 20px;
+}
+
+.invoice-container {
+    max-width: 750px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    min-height: 800px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #f97373;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.invoice-info {
+    text-align: right;
+}
+
+.invoice-info h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #111827;
+}
+
+/* Addresses */
+.addresses {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 40px;
+}
+
+.addr-col {
+    flex: 1;
+}
+
+.addr-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #9ca3af;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+}
+
+.addr-box strong {
+    display: block;
+    font-size: 15px;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.addr-line {
+    display: block;
+    color: #4b5563;
+    margin-bottom: 2px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    background: #1f2937;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+}
+
+.prod-name {
+    font-weight: 500;
+    color: #111827;
+}
+
+/* Totals Section */
+.totals {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.totals-table {
+    width: 350px; /* Tăng độ rộng để chứa 2 cột thoải mái */
+    border-collapse: collapse;
+}
+
+.totals-table td {
+    padding: 8px 0;
+    border: none;
+}
+
+.lbl {
+    text-align: left;
+    color: #6b7280;
+    padding-right: 10px;
+}
+
+.val {
+    text-align: right;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Dòng tổng cộng tách biệt */
+.grand-row td {
+    border-top: 1px dashed #ddd;
+    padding-top: 12px;
+    margin-top: 5px;
+}
+
+.grand-lbl {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    text-align: left;
+}
+
+.grand-total {
+    font-size: 18px;
+    font-weight: 800;
+    color: #f97373;
+    text-align: right;
+}
+
+/* Footer */
+.footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* Print Button */
+.print-btn {
+    position: absolute;
+    top: 20px;
+    right: -120px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media print {
+    body {
+        background: #fff;
+        padding: 0;
+    }
+
+    .invoice-container {
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .print-btn {
+        display: none;
+    }
+}

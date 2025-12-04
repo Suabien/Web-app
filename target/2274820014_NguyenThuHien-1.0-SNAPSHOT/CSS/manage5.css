@@ -1,0 +1,380 @@
+/* CSS/manage5.css - FINAL FIX */
+
+/* --- Toolbar & Header --- */
+.page-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.toolbar-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding: 10px 15px 10px 35px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    width: 250px;
+    transition: all 0.2s;
+    background: #f9fafb;
+}
+
+.search-box input:focus {
+    background: #fff;
+    border-color: #f97373;
+    box-shadow: 0 0 0 3px rgba(249, 115, 115, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    background: #f9fafb;
+    cursor: pointer;
+    color: #374151;
+}
+
+.btn-add {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #fb7185, #f97373);
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(249, 115, 115, 0.25);
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+}
+
+/* --- Table Styles --- */
+.table-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead {
+    background-color: #f97373 !important;
+}
+
+thead tr {
+    background-color: #f97373 !important;
+}
+
+th {
+    background-color: #f97373 !important; 
+    color: #ffffff !important;      
+    padding: 15px;
+    text-align: left;
+    font-weight: 700;
+    border-bottom: 2px solid #e5e7eb; 
+    text-transform: uppercase;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Body bảng */
+td {
+    padding: 15px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #4b5563;
+}
+
+tr:hover {
+    background: #f9fafb;
+}
+
+.product-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.desc-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 300px;
+}
+
+.badge-stock {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.btn-icon {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #fff;
+}
+
+.btn-edit {
+    border-color: #fed7aa;
+    color: #f97316;
+    background: #fff7ed;
+}
+
+.btn-edit:hover {
+    background: #ffedd5;
+}
+
+.btn-delete {
+    border-color: #fecaca;
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+.btn-delete:hover {
+    background: #fee2e2;
+}
+
+.btn-variant {
+    height: 34px;
+    padding: 0 16px;
+    border: 1px solid #bfdbfe;
+    color: #2563eb;
+    background: #eff6ff;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-variant:hover {
+    background: #dbeafe;
+}
+
+/* --- Modal Styles --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 50px auto;
+    border-radius: 16px;
+    max-width: 800px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #111827;
+}
+
+.close-modal {
+    cursor: pointer;
+    font-size: 24px;
+    color: #9ca3af;
+}
+
+.modal-body {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.modal-body-full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #f97373;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-footer {
+    padding: 20px 25px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: flex-end;
+    background: #f9fafb;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #16a34a;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #f3f4f6;
+    border: 1px dashed #d1d5db;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #4b5563;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.variant-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.variant-table th {
+    background: #f3f4f6 !important;
+    color: #374151 !important;
+    padding: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.variant-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 13px;
+}
+
+.msg-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #fecaca;
+}
+
+/* --- FIX BỔ SUNG ĐỂ SỬA LỖI GIAO DIỆN --- */
+
+/* 1. Fix Sidebar bị cụt (mất màu nền) */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.dashboard-wrapper {
+    min-height: 100vh; /* Chiều cao tối thiểu full màn hình */
+    display: flex;     /* Giữ cấu trúc ngang */
+}
+.dashboard-sidebar {
+    min-height: 100vh;
+    height: auto;
+}
+
+/* 2. Fix Nút Hành động bị lệch (Căn giữa) */
+table td {
+    vertical-align: middle !important; /* Căn giữa dọc bắt buộc */
+}
+.action-buttons {
+    display: flex;
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center;     /* Căn giữa dọc */
+    gap: 5px;
+}

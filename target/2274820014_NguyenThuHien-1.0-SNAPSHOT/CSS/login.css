@@ -1,0 +1,542 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 28, 2025, 9:25:36 PM
+    Author     : Gigabyte
+*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap');
+/* Base Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #FFB5C5, #F5FFFA, #FFB5C5);
+    overflow: hidden;
+}
+
+/* General Elements */
+label {
+    color: black;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 70%;
+    height: 35px;
+    font-size: 1em;
+    background: whitesmoke;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+button,
+.auth-btn,
+.popup-btn {
+    width: 70%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: white;
+    background: black;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
+
+button:hover,
+.auth-btn:hover,
+.popup-btn:hover {
+    background: #EEA2AD;
+}
+
+button:hover {
+    color: white;
+}
+
+.fa-user:before {
+    content: "\f007";
+    margin-left: 45px;
+}
+
+.fa-lock:before {
+    content: "\f023";
+    margin-left: 45px;
+}
+
+.fa-user-plus:before {
+    content: "\f234";
+    margin-left: 45px;
+}
+
+/* Main Box */
+.main {
+    width: 350px;
+    height: 500px;
+    background: url("/2274820014_NguyenThuHienn/Images/1.jpg") no-repeat center / cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    overflow: hidden;
+}
+
+#chk {
+    display: none;
+}
+
+/* Sign up & Login */
+.signup,
+.login {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.login {
+    background: url("/2274820014_NguyenThuHienn/Images/2.avif");
+    border-radius: 20% 20%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
+}
+
+.login label {
+    color: black;
+    padding-top: 20px;
+    transform: scale(0.6);
+}
+
+.login input {
+    background: gainsboro;
+}
+
+#chk:checked ~ .login {
+    transform: translateY(-500px);
+}
+
+#chk:checked ~ .login label {
+    transform: scale(1);
+}
+
+#chk:checked ~ .signup label {
+    transform: scale(0.6);
+}
+
+/* Popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-box {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.popup-overlay.active .popup-box {
+    transform: translateY(0);
+}
+
+.popup-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.popup-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.popup-box p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.popup-close:hover {
+    color: #333;
+}
+
+.success .popup-icon i {
+    color: #4CAF50;
+}
+
+.error .popup-icon i {
+    color: #F44336;
+}
+
+.success .popup-btn {
+    background: #4CAF50;
+}
+
+.success .popup-btn:hover {
+    background: #3e8e41;
+}
+
+.error .popup-btn {
+    background: #F44336;
+}
+
+.error .popup-btn:hover {
+    background: #d32f2f;
+}
+
+/* Auth Layout */
+.auth-container {
+    display: flex;
+    width: 90%;
+    max-width: 800px;
+    height: 85vh;
+    min-height: 500px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.auth-wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-header .logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 5px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.auth-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #000, #EEA2AD, #000);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s ease-in-out infinite;
+}
+
+/* Form Styling */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.5s ease;
+}
+
+.auth-form h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.auth-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #FFB5C5, #EEA2AD);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 80%;
+    height: 35px;
+    padding: 15px 15px 15px 45px;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s;
+    background: whitesmoke;
+}
+
+.input-group input:focus {
+    border-color: #EEA2AD;
+    box-shadow: 0 0 10px rgba(238, 162, 173, 0.3);
+}
+
+.auth-btn {
+    width: 80%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.switch-form span {
+    color: #EEA2AD;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: underline;
+}
+
+.switch-form span:hover {
+    color: #FF6B8B;
+}
+
+/* Background Slideshow */
+.auth-bg {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.bg-slide.active {
+    opacity: 1;
+}
+
+/* Role Selection Styles */
+.role-selection {
+    width: 80%;
+    margin: 20px auto 10px;
+    text-align: center;
+}
+
+.role-label {
+    display: block;
+    color: #333;
+    font-size: 1.2rem;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.role-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.role-option {
+    flex: 1;
+    padding: 12px 8px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-size: 0.85rem;
+    font-weight: 500;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.role-option:hover {
+    border-color: #EEA2AD;
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(238, 162, 173, 0.2);
+}
+
+.role-option.selected {
+    background: linear-gradient(135deg, #EEA2AD, #FFB5C5);
+    color: white;
+    border-color: #EEA2AD;
+    box-shadow: 0 6px 15px rgba(238, 162, 173, 0.4);
+    transform: translateY(-2px);
+}
+
+.role-option i {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.role-option.selected i {
+    transform: scale(1.1);
+}
+
+.role-option .role-text {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 480px) {
+    .role-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .role-option {
+        min-height: 60px;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 12px 15px;
+        gap: 10px;
+    }
+    
+    .role-option i {
+        margin-bottom: 0;
+        font-size: 1rem;
+    }
+    
+    .role-option .role-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .auth-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .auth-wrapper, .auth-bg {
+        width: 100%;
+    }
+
+    .auth-bg {
+        height: 300px;
+    }
+
+    .form-container {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-wrapper {
+        padding: 30px 20px;
+    }
+
+    .auth-header h1 {
+        font-size: 2rem;
+    }
+
+    .auth-form h2 {
+        font-size: 1.5rem;
+    }
+}
