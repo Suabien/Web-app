@@ -1,0 +1,22 @@
+# application-railway.yml
+spring:
+  config:
+    activate:
+      on-profile: railway
+  
+  # Override settings for Railway
+  jpa:
+    hibernate:
+      ddl-auto: validate  # Không dùng update trong production!
+  
+  # Railway-specific database config
+  datasource:
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  
+logging:
+  level:
+    org.springframework: WARN
+    com.zaxxer.hikari: INFO
